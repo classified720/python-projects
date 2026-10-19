@@ -1,6 +1,5 @@
-# Contact Book
+# Python Projects
 
-A terminal contact manager written in Python.
-Add, view, search, update and delete contacts, with tags.
+My practice projects while learning Python.
 
-Run it with: python contact_book.py
+- contact_book: terminal contact manager

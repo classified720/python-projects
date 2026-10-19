@@ -1,4 +1,4 @@
-import helpers
+import contact_book.helpers as helpers
 contacts = {}
 
 
