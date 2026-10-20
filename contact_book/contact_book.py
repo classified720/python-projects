@@ -1,4 +1,42 @@
 import helpers
+
+def main():
+
+    MENU = ( 
+        "1.Add contact",
+        "2.View all contacts",
+        "3.Search",
+        "4.Delete contact",
+        "5.Update contact",
+        "6.Show all tags",
+        "7.Quit"
+        )
+
+    while True:
+        helpers.print_header("CONTACT BOOK")
+        for item in MENU:
+            print(item)
+
+        choice = input("Choose: ")
+
+        if choice == "7":
+            print('Goodbye!')
+            break
+        elif choice =="1":
+            add_contact()
+        elif choice =="2":
+            view_contact()
+        elif choice =="3":
+            search_contact()
+        elif choice =="4":
+            delete_contact()
+        elif choice == "5":
+            update_contact()
+        elif choice == "6":
+            show_all_tags()
+        else:
+            print("INVALID CHOICE")
+            
 contacts = {}
 
 
@@ -73,37 +111,4 @@ def show_all_tags():
     sorted_tags = ", ".join(sorted(all_tags))
     print(f"Tags: {sorted_tags}")
 
-MENU = ( 
-    "1.Add contact",
-    "2.View all contacts",
-    "3.Search",
-    "4.Delete contact",
-    "5.Update contact",
-    "6.Show all tags",
-    "7.Quit"
-    )
-
-while True:
-    helpers.print_header("CONTACT BOOK")
-    for item in MENU:
-        print(item)
-
-    choice = input("Choose: ")
-
-    if choice == "7":
-        print('Goodbye!')
-        break
-    elif choice =="1":
-        add_contact()
-    elif choice =="2":
-        view_contact()
-    elif choice =="3":
-        search_contact()
-    elif choice =="4":
-        delete_contact()
-    elif choice == "5":
-        update_contact()
-    elif choice == "6":
-        show_all_tags()
-    else:
-        print("INVALID CHOICE")
+main()
