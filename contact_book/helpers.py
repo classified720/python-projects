@@ -10,7 +10,7 @@ def print_contact(name, details):
     print(f"Phone: {details['phone']}")
     print(f"Email: {details['email']}")
     if len(details['tags'])== 0:
-        print("Tags:None") 
+        print("Tags: None") 
     else:
         print(f"Tags:{', '.join(details['tags'])}")
     print()
@@ -29,5 +29,7 @@ def get_tags():
         if tag != "":
             tags.append(tag)
     return tags
+
+
 
     

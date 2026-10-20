@@ -62,13 +62,25 @@ def update_contact():
     else:
         print("INVALID CHOICE!")
 
+def show_all_tags():
+    all_tags = set()
+    for details in contacts.values():
+        for tag in details["tags"]:
+            all_tags.add(tag)
+    if len(all_tags) == 0:
+        print("No tags yet.")
+        return
+    sorted_tags = ", ".join(sorted(all_tags))
+    print(f"Tags: {sorted_tags}")
+
 MENU = ( 
     "1.Add contact",
     "2.View all contacts",
     "3.Search",
     "4.Delete contact",
     "5.Update contact",
-    "6.Quit"
+    "6.Show all tags",
+    "7.Quit"
     )
 
 while True:
@@ -78,7 +90,7 @@ while True:
 
     choice = input("Choose: ")
 
-    if choice == "6":
+    if choice == "7":
         print('Goodbye!')
         break
     elif choice =="1":
@@ -91,5 +103,7 @@ while True:
         delete_contact()
     elif choice == "5":
         update_contact()
+    elif choice == "6":
+        show_all_tags()
     else:
         print("INVALID CHOICE")
